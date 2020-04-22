@@ -11,6 +11,7 @@
     "lib": "vue-cli-service build --target lib packages/index.js"
   },
   "dependencies": {
+    "async-validator": "^3.2.4",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.1",
     "vue": "^2.6.11",
@@ -54,5 +55,8 @@
     "type": "git",
     "url": "https://github.com/Reconsole/yorkUi.git"
   },
-  "keywords": ["ui", "york"]
+  "keywords": [
+    "ui",
+    "york"
+  ]
 }

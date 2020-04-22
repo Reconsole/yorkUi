@@ -7,6 +7,10 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  devServer: {
+    port: 5000,
+    hot: true,
+  },
   // 扩展 webpack 配置，使 packages 加入编译
   chainWebpack: config => {
     config.module
