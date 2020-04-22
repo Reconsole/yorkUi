@@ -1,12 +1,15 @@
-// .npmignore
 # 忽略目录
-test/
-packages/
+examples/
 public/
- 
+node_modules/
 # 忽略指定文件
 vue.config.js
 babel.config.js
 *.map
-.editorconfig.js
+jsconfig.json
+vue.config.js
 yarn.lock
+.eslintrc.js
+.gitignore
+.prettierrc
+babel.config.js

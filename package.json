@@ -1,7 +1,7 @@
 {
   "license": "MIT",
-  "name": "yorkUi",
-  "version": "0.1.0",
+  "name": "york-demo-ui",
+  "version": "0.1.1",
   "private": false,
   "description": "个人玩具库",
   "scripts": {
@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "element-ui": "^2.13.1",
+    "vue": "^2.6.11",
+    "york-demo-ui": "^0.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -51,5 +53,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Reconsole/yorkUi.git"
-  }
+  },
+  "keywords": ["ui", "york"]
 }
