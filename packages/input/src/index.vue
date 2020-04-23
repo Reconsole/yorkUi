@@ -1,47 +1,39 @@
 <template>
-  <div>
-    <input 
-      type="text"
-      :value="currentValue"
-      @input="handleInput"
-      @blur="handleBlur"
-    >
-  </div>
+  <input 
+    v-model="currentValue"
+    type="text"
+    @blur="handleBlur"
+  >
 </template>
 
 <script>
 import Emitter from '../../../src/mixins/emitter'
 export default {
-  name: 'IInput',
   mixins: [ Emitter ],
-  inject: ['form'],
   props: {
     value: {
       type: String,
-      default: '',
+      default: ''
     }
   },
-  data () {
-    return {
-      currentValue: this.value
-    }
-  },
-  watch: {
-    value (nv) {
-      this.currentValue = nv
+  computed: {
+    currentValue: {
+      get () {
+        return this.value
+      },
+      set (nv) {
+        this.$emit('input', nv)
+        this.dispatch('FormItem', 'on-form-change', nv)
+      }
     }
   },
   methods: {
-    handleInput (evt) {
-      const value = evt.target.value
-      this.currentValue = value
-      this.$emit('input', value)
-    },
     handleBlur (evt) {
-      this.dispatch('iFormItem', 'on-form-blur', this.currentValue)
+      this.dispatch('FormItem', 'on-form-blur', evt.target.value)
     }
   }
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+</style>
