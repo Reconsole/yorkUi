@@ -1,3 +1,8 @@
+var path = require('path')
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   // 修改 src 为 examples
   pages: {
@@ -9,10 +14,12 @@ module.exports = {
   },
   devServer: {
     port: 5000,
-    hot: true,
+    hot: true
   },
   // 扩展 webpack 配置，使 packages 加入编译
   chainWebpack: config => {
+    config.resolve.alias.set('@', resolve('src'))
+
     config.module
       .rule('js')
       .include.add('/packages')
